@@ -1,7 +1,7 @@
 import urllib
 
-import matplotlib.image as mpimg
-import matplotlib.pyplot as plt
+from matplotlib import image as mpimg
+from matplotlib import pyplot as plt
 import pandas as pd
 import seaborn as sns
 import streamlit as st
