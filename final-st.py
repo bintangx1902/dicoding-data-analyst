@@ -13,12 +13,12 @@ sns.set(style='dark')
 # Dataset
 datetime_cols = ["order_approved_at", "order_delivered_carrier_date", "order_delivered_customer_date",
                  "order_estimated_delivery_date", "order_purchase_timestamp", "shipping_limit_date"]
-all_df = pd.read_csv("https://raw.githubusercontent.com/bintangx1902/dicoding-data-analyst/main/df.csv")
+all_df = pd.read_csv("./df.csv")
 all_df.sort_values(by="order_approved_at", inplace=True)
 all_df.reset_index(inplace=True)
 
 # Geolocation Dataset
-geolocation = pd.read_csv('https://raw.githubusercontent.com/bintangx1902/dicoding-data-analyst/main/geolocation.csv')
+geolocation = pd.read_csv('./geolocation.csv')
 data = geolocation.drop_duplicates(subset='customer_unique_id')
 
 for col in datetime_cols:
@@ -33,7 +33,7 @@ with st.sidebar:
     with col1:
         st.write(' ')
     with col2:
-        st.image("https://github.com/bintangx1902/dicoding-data-analyst/blob/main/logo.png", width=100)
+        st.image("https://raw.githubusercontent.com/bintangx1902/dicoding-data-analyst/blob/main/logo.png", width=100)
     with col3:
         st.write(' ')
 
@@ -209,6 +209,8 @@ with tab2:
 
     with st.expander("See Explanation"):
         st.write(
-            'According to the graph that has been created, there are more customers in the southeast and south. Other information, there are more customers in cities that are capitals (São Paulo, Rio de Janeiro, Porto Alegre, and others).')
+            'According to the graph that has been created, there are more customers in the southeast and south. Other '
+            'information, there are more customers in cities that are capitals '
+            '(São Paulo, Rio de Janeiro, Porto Alegre, and others).')
 
 st.caption('Copyright (C) Bintang Pratomo 2024')
